@@ -1,0 +1,32 @@
+/* ... (la majorité du CSS est inchangé) ... */
+
+/* MODIFIÉ : Le canevas est plus grand pour accueillir les arbres larges */
+.tree-canvas {
+    position: relative;
+    width: 100%;
+    max-width: 500px; /* Un peu plus de largeur */
+    min-height: 520px; /* Un peu plus de hauteur */
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    padding: 20px;
+    padding-bottom: 85px; 
+    box-sizing: border-box;
+}
+
+/* MODIFIÉ : On donne une "élévation" aux noeuds pour qu'ils soient au-dessus des lignes */
+.node {
+    /* ... (autres propriétés du noeud inchangées) ... */
+    z-index: 2; /* Les noeuds sont à l'étage 2 */
+    position: absolute; display: flex; justify-content: center; align-items: center; width: 60px; height: 60px; border-radius: 50%; font-size: 1.2em; font-weight: 600; color: white; cursor: pointer; transition: all .5s ease-in-out; transform: translate(-50%, -50%) scale(0); animation: pop-in .5s forwards;
+}
+
+/* MODIFIÉ : On s'assure que les lignes sont en dessous */
+.line {
+    /* ... (autres propriétés de la ligne inchangées) ... */
+    z-index: 1; /* Les lignes sont à l'étage 1 (donc en dessous des noeuds) */
+    position: absolute; background-color: #bdc3c7; height: 3px; transform-origin: 0 0; transition: width .5s ease-in-out;
+}
+
+/* ... (le reste est identique à la version précédente) ... */
+body{font-family:'Poppins',sans-serif;background-color:#f0f4f8;color:#333;padding:20px;box-sizing:border-box}main{width:100%;max-width:1200px;margin:0 auto;text-align:center}#control-panel{margin:20px 0;display:flex;justify-content:center;align-items:center;gap:10px}#number-input{padding:10px;border-radius:8px;border:2px solid #bdc3c7;font-size:1em}#start-button{padding:10px 20px;border:none;background-color:#3498db;color:white;font-size:1em;font-weight:600;border-radius:8px;cursor:pointer;transition:background-color .3s}#start-button:hover{background-color:#2980b9}#reset-button{padding:10px 20px;border:none;background-color:#e74c3c;color:white;font-size:1em;font-weight:600;border-radius:8px;cursor:pointer;transition:background-color .3s;display:none}#reset-button:hover{background-color:#c0392b}#learn-more-button{padding:10px 20px;border:none;background-color:#95a5a6;color:white;font-size:1em;font-weight:600;border-radius:8px;cursor:pointer;transition:background-color .3s;display:none}#learn-more-button:hover{background-color:#7f8c8d}#trees-container{display:flex;flex-wrap:wrap;justify-content:center;gap:30px;margin-top:30px}.node.composite{background:linear-gradient(145deg,#3a86ff,#2d6ac4);box-shadow:2px 2px 8px rgba(0,0,0,.2)}.node.prime{background:linear-gradient(145deg,#ffbe0b,#d49e09);box-shadow:2px 2px 8px rgba(0,0,0,.2);cursor:pointer}.node.decomposed{opacity:.4;cursor:default}@keyframes pop-in{to{transform:translate(-50%,-50%) scale(1)}}.factor-choice-popup{position:absolute;background-color:#ecf0f1;border-radius:8px;box-shadow:0 5px 15px rgba(0,0,0,.2);padding:10px;display:flex;flex-direction:column;gap:8px;z-index:10}.factor-choice-button{background-color:#34495e;color:white;border:none;padding:8px 12px;border-radius:5px;cursor:pointer;transition:background-color .2s}.factor-choice-button:hover{background-color:#2c3e50}.tree-result{position:absolute;bottom:15px;left:50%;width:90%;transform:translateX(-50%);background-color:#2ecc71;color:white;padding:10px;border-radius:8px;font-weight:600;font-size:1em;animation:pop-in .5s;line-height:1.5}#assistant-panel{margin-top:30px;padding:15px;background-color:#eaf2f8;border-left:5px solid #3498db;border-radius:8px;text-align:left}#assistant-panel h2{margin:0 0 10px 0;color:#2c3e50}
