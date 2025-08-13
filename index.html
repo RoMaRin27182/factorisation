@@ -18,7 +18,7 @@
         </header>
 
         <section id="control-panel">
-            <input type="number" id="number-input" placeholder="Entrez un entier (ex: 36)">
+            <input type="number" id="number-input" placeholder="Entrez un entier (ex: 72)">
             <button id="start-button">Démarrer l'Analyse</button>
             <button id="reset-button">Changer de nombre</button>
             <button id="learn-more-button">En savoir plus</button>
@@ -31,6 +31,35 @@
             <p id="assistant-message">Bienvenue ! Entrez un nombre pour commencer.</p>
         </aside>
     </main>
+
+    <div id="learn-more-backdrop" class="modal-backdrop hidden"></div>
+    <div id="learn-more-modal" class="modal-content hidden">
+        <span id="close-modal-button" class="close-button">&times;</span>
+        <h2>Le Théorème Fondamental Expliqué avec des Legos</h2>
+        
+        <p>Imagine que les nombres sont comme des constructions faites en blocs Lego. Peu importe la forme que tu donnes à ta construction — un château, un robot ou un vaisseau spatial — si tu la démontes complètement, tu te retrouveras toujours avec les mêmes blocs de base.</p>
+        
+        <p>En mathématiques, ces « blocs de base » sont les <strong>nombres premiers</strong> : 2, 3, 5, 7, 11, 13, etc. Un nombre premier est comme un bloc Lego qui ne peut pas être cassé en blocs plus petits.</p>
+        
+        <ul>
+            <li><strong>2 est premier</strong> : on ne peut pas le faire avec des blocs plus petits que 2.</li>
+            <li><strong>4 n’est pas premier</strong> : il se démonte en 2 × 2.</li>
+        </ul>
+        
+        <h3>Le théorème fondamental de l’arithmétique dit que :</h3>
+        <p>Tout nombre entier plus grand que 1 peut être construit en multipliant des nombres premiers, et il n’y a qu’une seule façon d’obtenir cette combinaison (sauf pour l’ordre).</p>
+        
+        <p>Par exemple, pour le nombre 60, la "recette" sera toujours la même, peu importe comment on la mélange :</p>
+        <ul>
+            <li>60 = 2 × 2 × 3 × 5 = 2<sup>2</sup> × 3 × 5</li>
+            <li>ou encore</li>
+            <li>60 = 3 × 5 × 2 × 2 = 3 × 5 × 2<sup>2</sup></li>
+        </ul>
+        
+        <p>Ce théorème est super important car il nous dit que les nombres entiers ont une « empreinte digitale » unique, un peu comme un code secret qui permet de les reconnaître.</p>
+
+        <p>Et comme en Lego, si tu connais les bons blocs de base, tu peux construire et reconstruire à l’infini !</p>
+    </div>
 
     <script src="app.js"></script>
 
